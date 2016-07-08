@@ -25,3 +25,8 @@ Route::post('item/create', [
 	'uses' => 'ItemController@addItem',
 	'as'   => 'uploadItem',
 ]);
+
+Route::post('item/search', [
+	'uses' => 'SearchController@getResults',
+	'as'   => 'searchItem',
+]);

@@ -7,6 +7,13 @@
 			<p>This is a platform where you can search for items base on there categories and price</p>
 		</div>
 		<a href="{{ route('itemForm') }}">Add an Item to the store</a>
+
+		<form method="post" action="{{ route('searchItem') }}">
+		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+			<label for="search">Search an Item</label>
+			<input type="text" name="search">
+			<button type="submit">Search</button>
+		</form>
 		
 		
 	</div>
