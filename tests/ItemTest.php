@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ItemTest extends TestCase
 {
+	use DatabaseTransactions;
     /**
      * This test for empty fields.
      *
@@ -16,14 +17,14 @@ class ItemTest extends TestCase
     	$item = factory('Dsis\Item')->create([
             'name'        => 'Infinix Zero',
             'price'     => 20000,
-            'category' => 'Mobile Phones',
+            'category' => 'laptop',
         ]);
 
         $this->visit('/item/create')
         	->type('', 'name')
         	->type('', 'category')
         	->type('', 'price')
-            ->press('Upload Video')
+            ->press('Add')
             ->see('The name field is required.')
             ->see('The category field is required.')
             ->see('The price field is required.');
@@ -39,14 +40,14 @@ class ItemTest extends TestCase
     	$item = factory('Dsis\Item')->create([
             'name'        => 'Infinix Zero',
             'price'     => 20000,
-            'category' => 'Mobile Phones',
+            'category' => 'laptop',
         ]);
 
         $this->visit('/item/create')
         	->type('Infinix hot', 'name')
         	->type('', 'category')
         	->type('', 'price')
-            ->press('Upload Video')
+            ->press('Add')
             ->see('The category field is required.')
             ->see('The price field is required.');
     }
@@ -61,14 +62,14 @@ class ItemTest extends TestCase
     	$item = factory('Dsis\Item')->create([
             'name'        => 'Infinix Zero',
             'price'     => 20000,
-            'category' => 'Mobile Phones',
+            'category' => 'laptop',
         ]);
 
         $this->visit('/item/create')
         	->type('', 'name')
-        	->type('Mobile phones', 'category')
+        	->type('laptop', 'category')
         	->type('', 'price')
-            ->press('Upload Video')
+            ->press('Add')
             ->see('The name field is required.')
             ->see('The price field is required.');
     }
@@ -83,14 +84,14 @@ class ItemTest extends TestCase
     	$item = factory('Dsis\Item')->create([
             'name'        => 'Infinix Zero',
             'price'     => 20000,
-            'category' => 'Mobile Phones',
+            'category' => 'laptop',
         ]);
 
         $this->visit('/item/create')
         	->type('', 'name')
         	->type('', 'category')
         	->type(2000, 'price')
-            ->press('Upload Video')
+            ->press('Add')
             ->see('The name field is required.')
             ->see('The category field is required.');
     }
@@ -105,15 +106,15 @@ class ItemTest extends TestCase
     	$item = factory('Dsis\Item')->create([
             'name'        => 'Infinix Zero',
             'price'     => 20000,
-            'category' => 'Mobile Phones',
+            'category' => 'laptop',
         ]);
 
         $this->visit('/item/create')
         	->type('Infinix hot', 'name')
-        	->type('Mobile phones', 'category')
+        	->type('laptop', 'category')
         	->type(2000, 'price')
-            ->press('Upload Video')
+            ->press('Add')
             ->seePageIs('/')
-            ->see('Welcome to Dsis');
+            ->see('Item succesfully added');
     }
 }

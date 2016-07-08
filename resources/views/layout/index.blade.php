@@ -6,6 +6,7 @@
 			<h1>Welcome to Demo Supermarket Information System</h1>
 			<p>This is a platform where you can search for items base on there categories and price</p>
 		</div>
+		<a href="{{ route('itemForm') }}">Add an Item to the store</a>
 		
 		
 	</div>

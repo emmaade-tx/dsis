@@ -2,9 +2,12 @@
 
 namespace Dsis\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Auth;
+use Dsis\Item;
 use Dsis\Http\Requests;
+use Illuminate\Http\Request;
+use Dsis\Http\Requests\ItemRequest;
+
 
 class ItemController extends Controller
 {
@@ -13,8 +16,14 @@ class ItemController extends Controller
     	return view('layout.itemform');
     }
 
-    public function addItem()
+    public function addItem(ItemRequest $request)
     {
-    	
+    	Item::create([
+    		'name' => $request['name'],
+    		'category' => $request['category'],
+    		'price' => $request['price'],
+    	]);
+
+    	return redirect()->route('index')->withInfo('Item succesfully added');
     }
 }

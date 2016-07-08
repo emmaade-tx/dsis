@@ -2,3 +2,7 @@
 	background: url(../image/Background.jpg);
     background-size: cover;
 }
+
+.help-block {
+	color: red;
+}

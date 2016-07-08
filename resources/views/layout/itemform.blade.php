@@ -20,7 +20,7 @@
 			<div class="form-group({{ $errors->has('price') ? 'has-error' : '' }})">
 				<label for="price">Price</label>
 				<input type="text" name="price" class="form-control" placeholder="Price">
-				@if ($errors->has('Price'))
+				@if ($errors->has('price'))
 					<span class="help-block">
 						<strong>{{ $errors->first('price') }}</strong>
 					</span>

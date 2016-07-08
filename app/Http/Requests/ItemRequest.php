@@ -24,11 +24,9 @@ class ItemRequest extends Request
     public function rules()
     {
         return [
-            return [
             'name' => 'required',
             'category' => 'required',
-            'price' => 'required'
-        ];
+            'price' => 'required',
         ];
     }
 }
