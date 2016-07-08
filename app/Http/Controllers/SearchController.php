@@ -5,6 +5,7 @@ namespace Dsis\Http\Controllers;
 use Dsis\Item;
 use Dsis\Http\Requests;
 use Illuminate\Http\Request;
+use Dsis\Http\Requests\SearchRequest;
 
 class SearchController extends Controller
 {
@@ -12,7 +13,7 @@ class SearchController extends Controller
      * Perform a search query and return results
      * if any otherwise notify user No results.
      */
-    public function getResults(Request $request)
+    public function getResults(SearchRequest $request)
     {
 
         $results = Item::orderBy('id', 'Desc')

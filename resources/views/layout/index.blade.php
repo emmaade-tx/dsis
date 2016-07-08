@@ -12,6 +12,11 @@
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<label for="search">Search an Item</label>
 			<input type="text" name="search">
+			@if ($errors->has('search'))
+					<span class="help-block">
+						<strong>{{ $errors->first('search') }}</strong>
+					</span>
+			@endif
 			<button type="submit">Search</button>
 		</form>
 		
