@@ -4,7 +4,7 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ExampleTest extends TestCase
+class HomePageTest extends TestCase
 {
     /**
      * A test to ensure the homepage is visited.
@@ -14,6 +14,6 @@ class ExampleTest extends TestCase
     public function testHomePageIsvisited()
     {
         $this->visit('/')
-             ->see('Welcome to Dsis');
+             ->see('Welcome to Demo Supermarket Information System');
     }
 }
