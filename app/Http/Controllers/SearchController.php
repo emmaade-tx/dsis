@@ -15,7 +15,6 @@ class SearchController extends Controller
      */
     public function getResults(SearchRequest $request)
     {
-
         $results = Item::orderBy('id', 'Desc')
            ->where('name', 'like', '%'.$request->search.'%')
            ->orWhere('price', 'like', '%'.$request->search.'%')
