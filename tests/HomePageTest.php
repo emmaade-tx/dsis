@@ -7,13 +7,13 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class ExampleTest extends TestCase
 {
     /**
-     * A basic functional test example.
+     * A test to ensure the homepage is visited.
      *
      * @return void
      */
-    public function testBasicExample()
+    public function testHomePageIsvisited()
     {
         $this->visit('/')
-             ->see('Laravel 5');
+             ->see('Welcome to Dsis');
     }
 }
