@@ -11,6 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+	'uses' => 'HomeController@index',
+	'as'   => 'index',
+]);
+
+Route::get('item/create', [
+	'uses' => 'ItemController@itemForm',
+	'as'   => 'itemForm',
+]);
+
+Route::post('item/create', [
+	'uses' => 'ItemController@addItem',
+	'as'   => 'uploadItem',
+]);
+
+Route::post('item/search', [
+	'uses' => 'SearchController@getResults',
+	'as'   => 'searchItem',
+]);
